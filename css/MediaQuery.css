@@ -1,0 +1,34 @@
+.container > * {
+    border: 4px solid black;
+    margin: 0.2rem;
+    padding: 1rem;
+  }
+  
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-areas:
+      "header  header"
+      "sidebar sidebar"
+      "main main";
+  }
+  
+  @media screen and (min-width: 600px) {
+    .container {
+      grid-template-areas:
+        "header  header"
+        "sidebar main";
+    }
+  }
+  
+  header {
+    grid-area: header;
+  }
+  
+  aside {
+    grid-area: sidebar;
+  }
+  
+  main {
+    grid-area: main;
+  }

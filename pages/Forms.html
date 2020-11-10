@@ -75,6 +75,16 @@
                     emailError.textContent="Email is invalid";
             });
             
+            const phone = document.getElementById("tel");
+            const phoneError = document.querySelector(".tel-error");
+            phone.addEventListener('input',function(){
+                let phoneRegex = RegExp("^[0-9]{1,}[ ][1-9]{1}[0-9]{9}$");
+                if(phoneRegex.test(phone.value))
+                    phoneError.textContent = "";
+                else
+                    phoneError.textContent="Phone number is invalid";
+            });
+            
             const salary = document.querySelector('#salary');
             const output = document.querySelector(".salary-output");
             output.textContent = salary.value;
